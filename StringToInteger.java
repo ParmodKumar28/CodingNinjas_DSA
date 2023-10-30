@@ -31,6 +31,29 @@ public class StringToInteger {
 
     public static int convertStringToInt(String input)
     {
-        
+        if(input.length()==0||input==null)
+        {
+            return 0;
+        }
+        String str = convertStringHelper(input, 0);
+        if(str.length()==0)
+        {
+            return 0;
+        }
+        return Integer.parseInt(str);
+    }
+
+    public static String convertStringHelper(String s, int si)
+    {
+        if(si==s.length())
+        {
+            return "";
+        }
+        String str = "";
+        if(s.charAt(si)>= '0' || s.charAt(si)<= '9')
+        {
+            str = String.valueOf(s.charAt(si));
+        }
+        return str + convertStringHelper(s, si+1);
     }
 }
