@@ -6,14 +6,10 @@ public class RemoveDuplicates {
     public static ArrayList<Integer> removeDuplicates(int[] arr) {
         ArrayList<Integer> Output = new ArrayList<>();
         HashMap<Integer, Boolean> map = new HashMap<>();
-        for(int i=0;i<arr.length;i++)
-        {
-            if(map.containsKey(arr[i]))
-            {
+        for (int i = 0; i < arr.length; i++) {
+            if (map.containsKey(arr[i])) {
                 continue;
-            }
-            else
-            {
+            } else {
                 map.put(arr[i], true);
                 Output.add(arr[i]);
             }
